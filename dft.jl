@@ -1,3 +1,8 @@
+push!(LOAD_PATH, ".")
+module dft
+
+export DFT
+
 function DFT(x̄::Array{<:Number})
     n = length(x̄)
     ȳ = zeros(Complex, n)
@@ -14,6 +19,13 @@ function DFT(x̄::Array{<:Number})
     ȳ
 end
 
-x̄ = [1 1 0im 2]
-ȳ = DFT(x̄)
-display(ȳ)
+end # end of module
+
+function main()
+    x̄ = [1 1 0im 2]
+    ȳ = DFT(x̄)
+    display(ȳ)
+end
+
+#main()
+
